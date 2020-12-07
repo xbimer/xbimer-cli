@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 from io import open
 from os import path
-from ampm_cli import version
+from xbimer_cli import _utils_ as _utils
 
 here = path.abspath(path.dirname(__file__))
 
