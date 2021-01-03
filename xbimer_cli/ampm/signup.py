@@ -10,16 +10,26 @@ import passwd
 def main():
     signupPromptOpts = [
         {
-            'type': 'input',
-            'name': 'email',
-            'message': 'What\'s your email',
-            'validate': lambda val: re.match("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$", val) != None or 'email format error..'
+            'type':
+            'input',
+            'name':
+            'email',
+            'message':
+            'What\'s your email',
+            'validate':
+            lambda val: re.match(
+                "^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$",
+                val) != None or 'email format error..'
         },
         {
-            'type': 'input',
-            'name': 'name',
-            'message': 'What\'s your name',
-            'validate': lambda val: len(val) >= 6 or 'name length must be greater than 6'
+            'type':
+            'input',
+            'name':
+            'name',
+            'message':
+            'What\'s your name',
+            'validate':
+            lambda val: len(val) >= 6 or 'name length must be greater than 6'
         },
     ]
     signupPromptRep = PyInquirer.prompt(signupPromptOpts)

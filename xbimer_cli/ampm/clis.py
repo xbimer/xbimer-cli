@@ -1,7 +1,6 @@
 from os import path
 from sys import path as sysPath
 
-
 here = path.abspath(path.dirname(__file__))
 parent = path.dirname(here)
 sysPath.append(parent)
@@ -12,6 +11,7 @@ import passwd
 import signup
 import click
 
+
 @click.group()
 def main():
     pass
@@ -19,7 +19,7 @@ def main():
 
 @click.command()
 def version():
-    click.echo("xbimer-cli "+_utils_.VERSION)
+    click.echo("xbimer-cli " + _utils_.VERSION)
 
 
 main.add_command(signup.main, "signup")

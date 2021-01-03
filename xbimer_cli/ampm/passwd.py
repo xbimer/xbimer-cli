@@ -9,29 +9,32 @@ import _utils_
 
 
 def setPassword(email):
-    codeOpts = [
-        {
-            'type': 'input',
-            'name': 'code',
-            'message': 'verification code',
-            'validate': lambda val: len(val) == 5 or 'verification code length must be equal 5'
-        }
-    ]
+    codeOpts = [{
+        'type':
+        'input',
+        'name':
+        'code',
+        'message':
+        'verification code',
+        'validate':
+        lambda val: len(val) == 5 or 'verification code length must be equal 5'
+    }]
     codePromptRep = PyInquirer.prompt(codeOpts)
 
-    passwdOpts = [
-        {
-            'type': 'password',
-            'message': 'What\'s your password',
-            'name': 'password',
-            'validate': lambda val: len(val) >= 6 or 'password length must be greater than 6'
-        },
-        {
-            'type': 'password',
-            'message': 'Confirm your password',
-            'name': 'cPassword'
-        }
-    ]
+    passwdOpts = [{
+        'type':
+        'password',
+        'message':
+        'What\'s your password',
+        'name':
+        'password',
+        'validate':
+        lambda val: len(val) >= 6 or 'password length must be greater than 6'
+    }, {
+        'type': 'password',
+        'message': 'Confirm your password',
+        'name': 'cPassword'
+    }]
     while True:
         passwdPromptRep = PyInquirer.prompt(passwdOpts)
         if passwdPromptRep['password'] == passwdPromptRep['cPassword']:
@@ -50,22 +53,27 @@ def setPassword(email):
     }
 
     _utils_.httpPost('ampm/passwd', data=bodyDict)
-    
+
     click.echo('Info: set password success!!')
+
 
 @click.command()
 def main():
-    emailPromptOpts = [
-        {
-            'type': 'input',
-            'name': 'email',
-            'message': 'What\'s your email',
-            'validate': lambda val: re.match("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$", val) != None or 'email format error..'
-        }
-    ]
+    emailPromptOpts = [{
+        'type':
+        'input',
+        'name':
+        'email',
+        'message':
+        'What\'s your email',
+        'validate':
+        lambda val: re.match(
+            "^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$",
+            val) != None or 'email format error..'
+    }]
 
     emailPromptRep = PyInquirer.prompt(emailPromptOpts)
-    
+
     codeRep = _utils_.httpPost('ampm/passwd-code', data=emailPromptRep)
     click.echo(f"Info: sent captcha to {emailPromptRep['email']}")
     setPassword(emailPromptRep['email'])
