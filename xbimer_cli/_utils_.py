@@ -15,11 +15,10 @@ def httpPost(path, *args, **kwargs):
     data = kwargs.pop("data")
     kwargs.setdefault("data", json.dumps(data))
     res = requests.post(url, *args, **kwargs)
-    data = res.json()
     if res.status_code != 200:
         raise click.ClickException(data['message'])
 
-    return data
+    return res
 
 
 def httpGet(path, *args, **kwargs):

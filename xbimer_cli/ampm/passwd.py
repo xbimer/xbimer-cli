@@ -50,8 +50,9 @@ def setPassword(email):
     }
 
     _utils_.httpPost('ampm/passwd', data=bodyDict)
-    
+
     click.echo('Info: set password success!!')
+
 
 @click.command()
 def main():
@@ -65,7 +66,8 @@ def main():
     ]
 
     emailPromptRep = PyInquirer.prompt(emailPromptOpts)
-    
+
     codeRep = _utils_.httpPost('ampm/passwd-code', data=emailPromptRep)
+    print(codeRep.cookies.items())
     click.echo(f"Info: sent captcha to {emailPromptRep['email']}")
     setPassword(emailPromptRep['email'])
