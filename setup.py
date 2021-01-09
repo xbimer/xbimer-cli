@@ -23,28 +23,32 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as fh:
 # print(dependency_links)
 # print(long_description)
 
-setup(name='xbimer-cli',
-      version=version.VERSION,
-      description='archicad mini program command line interface',
-      long_description=long_description,
-      keywords='archicad, xbimer, xbimer-cli',
-      author='beanjs',
-      author_email='502554248@qq.com',
-      url='https://github.com/xbimer/xbimer-cli.git',
-      license='MIT',
-      packages=find_packages(exclude=[]),
-      include_package_data=True,
-      install_requires=install_requires,
-      dependency_links=dependency_links,
-      entry_points={'console_scripts': ['ampm = xbimer_cli.ampm.clis:main']},
-      classifiers=[
-          'Programming Language :: Python :: 3.7',
-          'Environment :: Console',
-          'Intended Audience :: Developers',
-          'License :: OSI Approved :: MIT License',
-          'Operating System :: OS Independent',
-          'Topic :: Software Development :: User Interfaces',
-          'Topic :: Software Development :: '
-          'Libraries :: Application Frameworks',
-      ],
-      python_requires=">=3.7.5")
+setup(
+    name='xbimer-cli',
+    version=version.VERSION,
+    description='archicad mini program command line interface',
+    long_description=long_description,
+    keywords='archicad, xbimer, xbimer-cli',
+    author='beanjs',
+    author_email='502554248@qq.com',
+    url='https://github.com/xbimer/xbimer-cli.git',
+    license='MIT',
+    packages=find_packages(exclude=[]),
+    include_package_data=True,
+    install_requires=install_requires,
+    dependency_links=dependency_links,
+    entry_points={
+        'console_scripts':
+        ['ampm = xbimer_cli.ampm.clis:main', 'amp = xbimer_cli.amp.clis:main']
+    },
+    classifiers=[
+        'Programming Language :: Python :: 3.7',
+        'Environment :: Console',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
+        'Topic :: Software Development :: User Interfaces',
+        'Topic :: Software Development :: '
+        'Libraries :: Application Frameworks',
+    ],
+    python_requires=">=3.7.5")
