@@ -74,6 +74,6 @@ def main():
 
     emailPromptRep = PyInquirer.prompt(emailPromptOpts)
 
-    codeRep = _utils_.httpPost('ampm/passwd-code', data=emailPromptRep)
+    _utils_.httpPost('ampm/passwd-code', data=emailPromptRep)
     click.echo(f"Info: sent captcha to {emailPromptRep['email']}")
     setPassword(emailPromptRep['email'])

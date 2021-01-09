@@ -33,7 +33,7 @@ def main():
         },
     ]
     signupPromptRep = PyInquirer.prompt(signupPromptOpts)
-    signupRep = _utils_.httpPost('ampm/signup', data=signupPromptRep)
+    _utils_.httpPost('ampm/signup', data=signupPromptRep)
     click.echo(f"Info: sent captcha to {signupPromptRep['email']}")
 
     passwd.setPassword(signupPromptRep['email'])

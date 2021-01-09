@@ -9,6 +9,8 @@ import _utils_
 import signin
 import passwd
 import signup
+import whoami
+
 import click
 
 
@@ -25,6 +27,7 @@ def version():
 main.add_command(signup.main, "signup")
 main.add_command(passwd.main, "passwd")
 main.add_command(signin.main, "signin")
+main.add_command(whoami.main, "whoami")
 main.add_command(version, "version")
 
 if __name__ == "__main__":
