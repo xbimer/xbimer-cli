@@ -46,6 +46,20 @@ def httpGetWithCookies(url, *args, **kwargs):
     return httpGet(url, *args, **kwargs)
 
 
+def httpPostWithCookies(url, *args, **kwargs):
+    usrHome = path.expanduser("~")
+    ximFile = path.join(usrHome, '.xbimer', __xbimer_temp__)
+    if not path.exists(ximFile):
+        raise click.ClickException("No signin")
+
+    with open(ximFile) as f:
+        jcookies = json.loads(f.read())
+        f.close()
+
+    kwargs.setdefault('cookies', requests.utils.cookiejar_from_dict(jcookies))
+    return httpPost(url, *args, **kwargs)
+
+
 def saveToken(res):
     cookiesDit = requests.utils.dict_from_cookiejar(res.cookies)
     if (not (__xbimer_token__ in cookiesDit)):
