@@ -11,16 +11,10 @@ import _utils_
 def main():
     signinPromptOpts = [
         {
-            'type':
-            'input',
-            'name':
-            'email',
-            'message':
-            'What\'s your email',
-            'validate':
-            lambda val: re.match(
-                "^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$",
-                val) != None or 'email format error..'
+            'type': 'input',
+            'name': 'email',
+            'message': 'What\'s your email',
+            'validate': _utils_.validateEmail
         },
         {
             'type':

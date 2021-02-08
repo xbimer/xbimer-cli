@@ -1,8 +1,9 @@
 import requests
 import json
 import click
-import os
-from os import path
+import re
+
+from os import path, mkdir, getcwd
 
 VERSION = '1.0.0'
 
@@ -68,7 +69,7 @@ def saveToken(res):
     usrHome = path.expanduser("~")
     ximHome = path.join(usrHome, ".xbimer")
     if not path.exists(ximHome):
-        os.mkdir(ximHome)
+        mkdir(ximHome)
 
     ximFile = path.join(ximHome, __xbimer_temp__)
     ctx = json.dumps({__xbimer_token__: cookiesDit[__xbimer_token__]})
@@ -76,3 +77,24 @@ def saveToken(res):
     with open(ximFile, "w") as f:
         f.write(ctx)
         f.close()
+
+
+def validateEmail(email):
+    if re.match(
+            "^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$",
+            email) != None:
+
+        return True
+
+    return 'email format error..'
+
+
+def readManifest():
+    cwd = getcwd()
+    mFile = path.join(cwd, 'manifest.json')
+
+    if not path.exists(mFile) or path.isdir(mFile):
+        raise click.ClickException('manifest file not found')
+
+    with open(mFile, "r", encoding='utf-8') as f:
+        return json.loads(f.read(), encoding='utf-8')

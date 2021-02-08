@@ -10,6 +10,7 @@ import signin
 import passwd
 import signup
 import whoami
+import lsproj
 
 import click
 
@@ -29,6 +30,7 @@ main.add_command(passwd.main, "passwd")
 main.add_command(signin.main, "signin")
 main.add_command(whoami.main, "whoami")
 main.add_command(version, "version")
+main.add_command(lsproj.main, "lsproj")
 
 if __name__ == "__main__":
     main()
