@@ -2,7 +2,7 @@
 
 Command line tools for xBIMer
 
-## ampm commands
+## ampm Commands
 
 ### `version`
 
@@ -10,6 +10,30 @@ Output xbimer-cli version number
 
 ```bash
 ampm version
+```
+
+### `lsproj`
+
+Show joined projects
+
+```bash
+ampm lsproj
+```
+
+### `passwd`
+
+Modify account password
+
+```bash
+ampm passwd
+```
+
+### `signin`
+
+Login to server
+
+```bash
+ampm signin
 ```
 
 ### `signup`
@@ -20,22 +44,6 @@ Create xBIMer account
 ampm signup
 ```
 
-### `passwd`
-
-Modify xBIMer account password
-
-```bash
-ampm passwd
-```
-
-### `signin`
-
-Login to xBIMer
-
-```bash
-ampm signin
-```
-
 ### `whoami`
 
 View current login account information
@@ -44,20 +52,44 @@ View current login account information
 ampm whoami
 ```
 
-## amp commands
+## amp Commands
 
 ### `version`
 
 Output xbimer-cli version number
 
 ```bash
-ampm version
+amp version
+```
+
+### `admem`
+
+Add member to a project
+
+```bash
+amp admem
 ```
 
 ### `init`
 
-Create archicad applet project
+Create applet project
 
 ```bash
 amp init
+```
+
+### `lsmem`
+
+Show the members who joined the project
+
+```bash
+amp lsmem
+```
+
+### `rmmem`
+
+Remove member from a project
+
+```bash
+amp rmmem
 ```
