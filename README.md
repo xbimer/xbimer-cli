@@ -93,3 +93,13 @@ Remove member from a project
 ```bash
 amp rmmem
 ```
+
+## ampe Commands
+
+### `init`
+
+Generating Python module encapsulation project based on C++
+
+```bash
+ampe init
+```
