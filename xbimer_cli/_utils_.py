@@ -7,7 +7,9 @@ from os import path, mkdir, getcwd
 
 VERSION = '1.0.0'
 
-__xbimer_domain__ = "http://127.0.0.1:3000"
+# __xbimer_domain__ = "http://127.0.0.1:3000"
+
+__xbimer_domain__ = "https://xbimer.beanjs.com"
 __xbimer_token__ = "xbimer-token"
 __xbimer_temp__ = "cli.json"
 

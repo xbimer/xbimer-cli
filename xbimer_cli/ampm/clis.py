@@ -4,6 +4,7 @@ from sys import path as sysPath
 here = path.abspath(path.dirname(__file__))
 parent = path.dirname(here)
 sysPath.append(parent)
+sysPath.append(here)
 
 import _utils_
 import signin

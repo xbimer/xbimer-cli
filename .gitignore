@@ -1,1 +1,4 @@
 __pycache__
+dist/
+xbimer_cli.egg-info/
+build/

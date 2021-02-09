@@ -11,7 +11,7 @@ def main():
     admemPromptOpts = [{
         'type': 'input',
         'name': 'email',
-        'message': 'What\'s your email',
+        'message': 'What\'s the member email',
         'validate': _utils_.validateEmail
     }]
     admemPromptRep = PyInquirer.prompt(admemPromptOpts)

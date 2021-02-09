@@ -270,7 +270,6 @@ def generateVcxprojUser(root, name, sdks):
             'xmlns': 'http://schemas.microsoft.com/developer/msbuild/2003'
         })
 
-    aaa = ""
     for sdk in sdks:
         if sdk == 'none':
             continue
