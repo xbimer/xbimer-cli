@@ -2,6 +2,12 @@
 
 Command line tools for xBIMer
 
+## Install CLI
+
+```bash
+pip install xbimer-cli
+```
+
 ## ampm Commands
 
 ### `version`
