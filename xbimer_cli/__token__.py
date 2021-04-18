@@ -3,26 +3,26 @@ from os.path import expanduser, join, exists
 from click import secho
 
 usrHome = expanduser('~')
-xirHome = join(usrHome, '.xbimer-xir')
-xirFile = join(xirHome, '.cli')
+xbimerHome = join(usrHome, '.xbimer')
+xbimerFile = join(xbimerHome, '.cli')
 
 
 def setToken(token):
-    if not exists(xirHome):
-        mkdir(xirHome)
+    if not exists(xbimerHome):
+        mkdir(xbimerHome)
 
-    with open(xirFile, 'w') as f:
+    with open(xbimerFile, 'w') as f:
         f.write(token)
         f.close()
 
 
 def getToken():
 
-    if not exists(xirFile):
+    if not exists(xbimerFile):
         secho('Error: No tokens available!!', fg='red')
         return None
 
-    with open(xirFile) as f:
+    with open(xbimerFile) as f:
         token = f.read()
         f.close()
 
@@ -30,5 +30,5 @@ def getToken():
 
 
 def delToken():
-    if exists(xirFile):
-        unlink(xirFile)
+    if exists(xbimerFile):
+        unlink(xbimerFile)
