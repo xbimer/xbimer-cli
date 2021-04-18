@@ -1,4 +1,4 @@
 requests==2.25.1
-rsa==4.6
+semver==2.13.0
 click==7.1.2
 PyInquirer==1.0.3

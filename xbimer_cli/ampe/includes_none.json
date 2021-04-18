@@ -1,5 +1,0 @@
-[
-  ".\\python37\\include",
-  ".\\pybind11\\include",
-  "%(AdditionalIncludeDirectories)"
-]
