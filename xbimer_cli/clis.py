@@ -3,7 +3,7 @@ import click
 import version
 import set_token
 import whoami
-# import applet
+import applet
 # import module
 
 
@@ -15,7 +15,7 @@ def main():
 main.add_command(version.main, "version")
 main.add_command(set_token.main, 'set-token')
 main.add_command(whoami.main, 'whoami')
-# main.add_command(applet.main, 'applet')
+main.add_command(applet.main, 'init-applet')
 # main.add_command(module.main, 'module')
 
 if __name__ == "__main__":
