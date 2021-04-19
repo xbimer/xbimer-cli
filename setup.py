@@ -21,7 +21,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as fh:
 
 setup(name='xbimer-cli',
       version=version.CURRENT_VERSION,
-      description='archicad mini program command line interface',
+      description='Command line tools for xBIMer',
       long_description=long_description,
       keywords='archicad, xbimer, xbimer-cli',
       author='beanjs',
