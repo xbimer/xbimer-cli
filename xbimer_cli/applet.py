@@ -2,7 +2,7 @@ from click import command, option, secho
 from __http__ import httpGet, httpPost
 from __token__ import getToken
 from __assets__ import ARCHICAD_SUPPORT, assetsCopy
-from os.path import join, exists
+from os.path import join, exists, isdir
 from os import getcwd, mkdir
 from json import dumps
 
@@ -23,7 +23,7 @@ def main(name):
         return
 
     appHome = join(getcwd(), name)
-    if exists(appHome):
+    if exists(appHome) and isdir(appHome):
         secho('The applet project directory already exists', fg='red')
         return
 
