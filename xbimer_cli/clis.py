@@ -1,3 +1,9 @@
+from os.path import dirname
+from sys import path
+
+here = dirname(__file__)
+path.append(here)
+
 import click
 
 import version

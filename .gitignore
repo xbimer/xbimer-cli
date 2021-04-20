@@ -3,4 +3,5 @@ dist/
 xbimer_cli.egg-info/
 build/
 .runtime
+.test
 .vscode
