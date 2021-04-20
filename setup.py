@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 from io import open
 from os import path
-from xbimer_cli import version
+from xbimer_cli.__version__ import CURRENT_VERSION
 
 here = path.abspath(path.dirname(__file__))
 
@@ -20,7 +20,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as fh:
     long_description = fh.read()
 
 setup(name='xbimer-cli',
-      version=version.CURRENT_VERSION,
+      version=CURRENT_VERSION,
       description='Command line tools for xBIMer',
       long_description=long_description,
       keywords='archicad, xbimer, xbimer-cli',

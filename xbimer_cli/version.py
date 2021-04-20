@@ -1,8 +1,7 @@
 from click import secho, command
 from __http__ import httpGet
 from semver import compare
-
-CURRENT_VERSION = '2.0.0'
+from __version__ import CURRENT_VERSION
 
 
 @command()
