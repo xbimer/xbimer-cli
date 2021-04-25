@@ -2,7 +2,7 @@ from os.path import join, dirname
 from shutil import copytree
 from zipfile import ZipFile
 
-ARCHICAD_SUPPORT = [22, 23]
+ARCHICAD_SUPPORT = [22, 23, 24]
 
 
 def assetsCopy(srcName, destDir):

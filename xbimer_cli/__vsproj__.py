@@ -289,6 +289,7 @@ def initGuide(moduleBase, name, usesdk):
     if usesdk:
         assetsExtract('ac22', libsHome)
         assetsExtract('ac23', libsHome)
+        assetsExtract('ac24', libsHome)
 
     assetsExtract('cast', libsHome)
     assetsExtract('pybind11', libsHome)
