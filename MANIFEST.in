@@ -10,9 +10,11 @@ include xbimer_cli/assets/config/mac/.gitkeep
 
 include xbimer_cli/assets/config/win/includes_ac22.json
 include xbimer_cli/assets/config/win/includes_ac23.json
+include xbimer_cli/assets/config/win/includes_ac24.json
 include xbimer_cli/assets/config/win/includes_none.json
 include xbimer_cli/assets/config/win/libraries_ac22.json
 include xbimer_cli/assets/config/win/libraries_ac23.json
+include xbimer_cli/assets/config/win/libraries_ac24.json
 include xbimer_cli/assets/config/win/libraries_none.json
 
 include xbimer_cli/assets/module/libs/.gitkeep
@@ -25,6 +27,7 @@ include xbimer_cli/assets/module/src/targetver.h
 
 include xbimer_cli/assets/ziplibs/ac22.zip
 include xbimer_cli/assets/ziplibs/ac23.zip
+include xbimer_cli/assets/ziplibs/ac24.zip
 include xbimer_cli/assets/ziplibs/cast.zip
 include xbimer_cli/assets/ziplibs/pybind11.zip
 include xbimer_cli/assets/ziplibs/Python37.zip
